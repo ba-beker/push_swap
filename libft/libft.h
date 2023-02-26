@@ -6,7 +6,7 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 15:21:17 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/22 14:34:25 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:54:56 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
-#include <stdio.h>
+# include <stdio.h>
 
 # define BUFFER_SIZE (1)
 // # define FOPEN_MAX (1025)
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	ft_bzero(void *s, int nbyte);
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_isalnum(int x);

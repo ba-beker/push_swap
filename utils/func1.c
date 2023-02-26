@@ -6,11 +6,12 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:30:22 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/22 17:56:19 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:26:24 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	is_sort(t_list **s)
 {
 	t_list	*head;
@@ -24,11 +25,12 @@ int	is_sort(t_list **s)
 	}
 	return (1);
 }
-void free_ab(t_list **stack)
+
+void	free_ab(t_list **stack)
 {
-	t_list *start;
-	t_list *t;
-	
+	t_list	*start;
+	t_list	*t;
+
 	start = *stack;
 	while (start)
 	{
@@ -39,11 +41,11 @@ void free_ab(t_list **stack)
 	free(stack);
 }
 
-int stack_size(t_list *head)
+int	stack_size(t_list *head)
 {
 	size_t	i;
 	t_list	*temp;
-	
+
 	temp = head;
 	i = 0;
 	while (temp)
@@ -51,13 +53,14 @@ int stack_size(t_list *head)
 		temp = temp->next;
 		i++;
 	}
-	return(i);
+	return (i);
 }
+
 // creates a new node and returns its pointer
-t_list *init_new_node(int num)
+t_list	*init_new_node(int num)
 {
 	t_list	*new;
-	
+
 	new = (t_list *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
@@ -66,14 +69,15 @@ t_list *init_new_node(int num)
 	new->next = NULL;
 	return (new);
 }
+
 // this function adds a new node to the linked list
-void add_to_llist(t_list **a_b, t_list *new)
+void	add_to_llist(t_list **a_b, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (*a_b)
 	{
-		temp  = stack_last(*a_b);
+		temp = stack_last(*a_b);
 		temp->next = new;
 		new->next = NULL;
 	}

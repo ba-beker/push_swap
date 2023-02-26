@@ -6,17 +6,19 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:36:57 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/12 21:33:16 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:44:40 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 // This function shifts down all elements of a_b by 1
 // the last element becomes the first one.
 int	reverse_rotate(t_list **a_b)
 {
 	t_list	*head;
 	t_list	*last;
+
 	if (stack_size(*a_b) < 2)
 		return (-1);
 	head = *a_b;
@@ -26,7 +28,7 @@ int	reverse_rotate(t_list **a_b)
 		if (head->next->next == NULL)
 		{
 			head->next = NULL;
-			break;
+			break ;
 		}
 		head = head->next;
 	}

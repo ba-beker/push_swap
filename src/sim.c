@@ -6,38 +6,14 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:03:03 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/23 10:53:06 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:58:12 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int find_min(t_list **stack, int value)
+static void	follow_sort_3(t_list **a, t_list *head, int min, int n_min)
 {
-	t_list *head;
-	int min;
-
-	head = *stack;
-	min = head->index;
-	while (head->next)
-	{
-		head = head->next;
-		if ((head->index < min) && head->index != value)
-			min = head->index; 
-	}
-	return (min);
-}
-static void sort_3(t_list **a)
-{
-	t_list *head;
-	int min;
-	int n_min;
-	
-	head = *a;
-	min = find_min(a, -1);
-	n_min = find_min(a, min);
-	if (is_sort(a))
-		return ;
 	if (head->index == min && head->next->index != n_min)
 	{
 		ra(a);
@@ -46,7 +22,7 @@ static void sort_3(t_list **a)
 	}
 	else if (head->index == n_min)
 	{
-		if(head->next->index == min)
+		if (head->next->index == min)
 			sa(a);
 		else
 			rra(a);
@@ -62,13 +38,28 @@ static void sort_3(t_list **a)
 		}
 	}
 }
-static void sort_4(t_list **a, t_list **b)
+
+static void	sort_3(t_list **a)
 {
-	int length;
+	t_list	*head;
+	int		min;
+	int		n_min;
+
+	head = *a;
+	min = find_min(a, -1);
+	n_min = find_min(a, min);
+	if (is_sort(a))
+		return ;
+	follow_sort_3(a, head, min, n_min);
+}
+
+static void	sort_4(t_list **a, t_list **b)
+{
+	int	length;
 
 	if (is_sort(a))
-		return;
-	length = get_length(a,find_min(a, -1));
+		return ;
+	length = get_length(a, find_min(a, -1));
 	if (length == 1)
 		ra(a);
 	else if (length == 2)
@@ -79,15 +70,16 @@ static void sort_4(t_list **a, t_list **b)
 	else if (length == 3)
 		rra(a);
 	if (is_sort(a))
-		return;
+		return ;
 	pb(a, b);
 	sort_3(a);
 	pa(a, b);
 }
 
-void sort_5(t_list **a, t_list **b)
+static void	sort_5(t_list **a, t_list **b)
 {
 	int	length;
+
 	length = get_length(a, find_min(a, -1));
 	if (length == 1)
 		ra(a);
@@ -109,26 +101,10 @@ void sort_5(t_list **a, t_list **b)
 	sort_4(a, b);
 	pa(a, b);
 }
-int get_length(t_list **a_b, int index)
-{
-	t_list	*head;
-	int		length;
-	
-	length = 0;
-	head = *a_b;
-	while (head)
-	{
-		if (head->index == index)
-			break ;
-		length++;
-		head = head->next;
-	}
-	return (length);
-}
 
-void simple_sort(t_list **a, t_list **b)
+void	simple_sort(t_list **a, t_list **b)
 {
-	int size;
+	int	size;
 
 	if (is_sort(a) || stack_size(*a) == 0
 		|| stack_size(*a) == 1)

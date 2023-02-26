@@ -6,7 +6,7 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 22:27:23 by mobabeke          #+#    #+#             */
-/*   Updated: 2022/12/24 00:24:23 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:27:11 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	check_space(char c)
 		|| c == '\v' || c == '\t' || c == ' ');
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	size_t	index;
-	int		multiplier;
+	long	index;
+	long	multiplier;
 	int		symbol;
 
 	index = 0;

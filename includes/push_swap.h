@@ -6,7 +6,7 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:51:03 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/15 10:27:31 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:56:58 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		get_free(char **string);
 int			get_length(t_list **a_b, int index);
 t_list		*init_new_node(int num);
 int			is_sort(t_list **s);
-t_list	*stack_last(t_list *a_b);
+t_list		*stack_last(t_list *a_b);
 // static int	max_bit(t_list **a_b);
 void		comp_sort(t_list **a, t_list **b);
 void		index_node(t_list **a_b);
@@ -57,4 +57,11 @@ int			rra(t_list **a);
 int			rrb(t_list **b);
 int			rrr(t_list **a, t_list **b);
 void		add_to_llist(t_list **a_b, t_list *new);
+int			find_min(t_list **stack, int value);
+
+int			sabs(char *instraction, t_list **a, t_list **b);
+int			pab(char *instraction, t_list **a, t_list **b);
+int			rabr(char *instraction, t_list **a, t_list **b);
+int			rrabr(char *instraction, t_list **a, t_list **b);
+
 #endif

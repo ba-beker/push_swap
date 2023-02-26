@@ -6,13 +6,13 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:01:54 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/22 17:53:22 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:42:55 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void init_llist(t_list **a_b, int argc, char **argv)
+static void	init_llist(t_list **a_b, int argc, char **argv)
 {
 	t_list	*temp;
 	char	**arg;
@@ -35,21 +35,21 @@ static void init_llist(t_list **a_b, int argc, char **argv)
 	index_node(a_b);
 	if (argc == 2)
 		get_free(arg);
-	
 }
 
-static void sort_stack(t_list **a, t_list **b)
+static void	sort_stack(t_list **a, t_list **b)
 {
 	if (stack_size(*a) <= 5)
 		simple_sort(a, b);
 	else
 		comp_sort(a, b);
 }
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
 	t_list	**a;
 	t_list	**b;
-	
+
 	if (argc < 2)
 		return (-1);
 	check_ar(argc, argv);
@@ -57,19 +57,15 @@ int main(int argc, char **argv)
 	b = (t_list **)malloc(sizeof(t_list));
 	*a = NULL;
 	*b = NULL;
-	// printf("before init");
 	init_llist(a, argc, argv);
-	// printf("before thecking sorting");
 	if (is_sort(a))
 	{
 		free_ab(b);
 		free_ab(a);
 		return (0);
 	}
-	// printf("before sorting");
 	sort_stack(a, b);
 	free_ab(a);
 	free_ab(b);
 	return (0);
 }
-

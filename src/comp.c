@@ -6,18 +6,18 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:36:32 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/14 18:49:01 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:32:28 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int max_bit(t_list **a_b)
+static int	max_bit(t_list **a_b)
 {
 	t_list	*head;
 	int		max;
 	int		max_bits;
-	
+
 	head = *a_b;
 	max = head->index;
 	max_bits = 0;
@@ -31,14 +31,15 @@ static int max_bit(t_list **a_b)
 		max_bits++;
 	return (max_bits);
 }
-void comp_sort(t_list **a, t_list **b)
+
+void	comp_sort(t_list **a, t_list **b)
 {
-	t_list *head_a;
-	int i;
-	int j;
-	int size;
-	int max_bits;
-	
+	t_list	*head_a;
+	int		i;
+	int		j;
+	int		size;
+	int		max_bits;
+
 	i = 0;
 	head_a = *a;
 	size = stack_size(head_a);

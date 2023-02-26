@@ -6,7 +6,7 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 11:07:47 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/22 14:29:44 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:55:56 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ static char	*create_line(char *stash)
 		line[i] = stash[i];
 		i++;
 	}
-	// if (stash[i] && stash[i] == '\n')
-	// 	line[i++] = '\n';
 	return (line);
 }
 

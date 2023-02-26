@@ -6,7 +6,7 @@
 /*   By: mobabeke <mobabeke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:04:26 by mobabeke          #+#    #+#             */
-/*   Updated: 2023/02/15 10:49:16 by mobabeke         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:22:03 by mobabeke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 static t_list	*find_nxt_min(t_list **a_b)
 {
-	int min;
-	t_list *head;
-	t_list *minimum;
-	
+	int		min;
+	t_list	*head;
+	t_list	*minimum;
+
 	head = *a_b;
 	min = 0;
 	minimum = NULL;
 	if (head)
 	{
-		while(head)
+		while (head)
 		{
 			if ((head->index == -1) && (!min || head->value < minimum->value))
 			{
@@ -37,11 +37,12 @@ static t_list	*find_nxt_min(t_list **a_b)
 	}
 	return (minimum);
 }
-void index_node(t_list **a_b)
+
+void	index_node(t_list **a_b)
 {
 	t_list	*head;
 	int		i;
-	
+
 	i = 0;
 	head = find_nxt_min(a_b);
 	while (head)
